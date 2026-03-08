@@ -1,13 +1,14 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from "vite";
 
 export default defineConfig({
+  base: "",
   server: {
-    host: '0.0.0.0',
-    port: 8181
+    host: "0.0.0.0",
+    port: 8181,
   },
   define: {
-    'import.meta.env.VITE_JELLYFIN_URL': '"__JELLYFIN_URL__"',
-    'import.meta.env.VITE_JELLYFIN_TOKEN': '"__JELLYFIN_TOKEN__"',
+    "import.meta.env.VITE_JELLYFIN_URL": '"__JELLYFIN_URL__"',
+    "import.meta.env.VITE_JELLYFIN_TOKEN": '"__JELLYFIN_TOKEN__"',
   },
   build: {
     modulePreload: false,
@@ -15,8 +16,8 @@ export default defineConfig({
       output: {
         entryFileNames: `assets/[name].js`,
         chunkFileNames: `assets/[name].js`,
-        assetFileNames: `assets/[name].[ext]`
-      }
-    }
-  }
-})
+        assetFileNames: `assets/[name].[ext]`,
+      },
+    },
+  },
+});
